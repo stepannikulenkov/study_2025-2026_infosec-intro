@@ -5,6 +5,11 @@ project:
 standalone: true
 self-contained: true
 
+# Явно указываем путь к lualatex из TeX Live 2026
+latex:
+  engine: lualatex
+  path: /usr/local/texlive/2026/bin/x86_64-linux/lualatex
+
 ## Julia support
 # engine: julia
 # julia:
@@ -16,15 +21,18 @@ number-sections: true
 toc: true
 toc-title: "Содержание"
 toc-depth: 2
+
 ## Crossref customization
 crossref:
   lof-title: "Список иллюстраций"
   lot-title: "Список таблиц"
   lol-title: "Листинги"
+
 ## Bibliography
 bibliography:
   - bib/cite.bib
 csl: _resources/csl/gost-r-7-0-5-2008-numeric.csl
+
 ## Formats
 format:
   ### Docx output format
@@ -34,10 +42,6 @@ format:
     toc-depth: 2
   ### Pdf output format
   pdf:
-    # pdf-engine: xelatex
-    ### minted support
-    # filters:
-    #   - minted-quarto
     toc: true
     number-sections: true
     colorlinks: false
@@ -64,3 +68,4 @@ format:
     indent: true
     include-in-header:
       - file: _resources/tex/preamble.tex
+
